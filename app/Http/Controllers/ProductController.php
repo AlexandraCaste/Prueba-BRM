@@ -33,6 +33,6 @@ class ProductController extends Controller
     public function show()
     {
     	$product = Product::all();
-    	return $product;
+    	return response()->json($product);
     }
 }
