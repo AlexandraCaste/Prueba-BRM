@@ -30,6 +30,20 @@ class ProductController extends Controller
     	return redirect()->back();
     }
 
+    public function restQuantity($id, $quantity)
+    {
+    	$product = Product::find($id);
+    	$product->quantity = ($product->quantity - $quantity);
+    	$product->save();
+    }
+
+    public function addQuantity($id, $quantity)
+    {
+    	$product = Product::find($id);
+    	$product->quantity = ($product->quantity + $quantity);
+    	$product->save();
+    }
+
     public function show()
     {
     	$product = Product::all();

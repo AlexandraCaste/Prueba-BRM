@@ -27,3 +27,9 @@ Route::post('product/store', ['as' => 'product/store', 'uses' => 'ProductControl
 Route::get('product/show', ['as' => 'product/show', 'uses' => 'ProductController@show']);
 
 Route::get('createSale', ['as' => 'createSale', 'uses' => 'SaleController@create']);
+
+Route::get('product/restQuantity/{id}/{quantity}', ['as' => 'product/restQuantity', 'uses' => 'ProductController@restQuantity']);
+
+Route::get('product/addQuantity/{id}/{quantity}', ['as' => 'product/addQuantity', 'uses' => 'ProductController@addQuantity']);
+
+Route::get('sale/pdf/{total_price}/{products}', ['as' => 'sale/pdf', 'uses' => 'PdfController@salePdf']);
